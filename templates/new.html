@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	
+
+
+<style>
+
+	body{
+		background-color: #5B63D7;
+	}
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #5B63D7;
+      color: white;
+    }
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- Required meta tags -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Subscribe</title>
+</head>
+<body>
+  <div class="topnav">
+    <a class = "active" href="/">Home</a>
+    <a href="/donate">Donate</a>
+    <a href="/about">About</a>
+  </div>
+
+  <div class="jumbotron text-center">
+    <h1>Subscribe to our Mailing List!</h1>
+    <br>
+    <p>Enter your name and email to sign up for our mailing list!
+       Emails will include coupons, information about sales, and more opportunities to help out! </p>
+  </div>
+
+<form class="sucess-none" id="newContact">
+  <div class="inputs">
+      <input type="text" value="" name="FNAME" class="required name" id="name" placeholder="Name:" style=" width: 35%; float: left; background: none; padding: 1.75em 2em; margin: 0; border-radius: .25em; box-shadow: none; border: none;">
+
+      <input type="email" value="" name="EMAIL" class="required email" id="email" placeholder="Email:" style=" width: 65%; float: left; background: none; padding: 1.75em 2em; margin: 0; border-radius: .25em; box-shadow: none; border: none;">
+  </div>
+  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_96d9e6e519173af7bdbdab9d_23138bd741" tabindex="-1" value="">
+  </div>
+  <input type="submit" class="button" value="Submit" name="subscribe" id="submitContact">
+</form>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    if ($('#newContact').length > 0 ) {
+        contactScript('forcontact');
+    }
+});
+//firebase
+function contactScript(value) {
+    var a = { 
+      apiKey: "AIzaSyBv7TzKvKmU2e_dg1ckVXmb0VCGnu9tAM0",
+    authDomain: "pitf-c09c9.firebaseapp.com",
+    databaseURL: "https://pitf-c09c9.firebaseio.com",
+    projectId: "pitf-c09c9",
+    storageBucket: "pitf-c09c9.appspot.com",
+    messagingSenderId: "263734988967"
+}
+    firebase.initializeApp(a);
+    var b = firebase.database().ref("messages");
+        $("#newContact").submit(function(a) { $(this), console.log("Submit to Firebase");
+        var c = $("#name").val(),
+            d = $("#email").val(),
+            f = { name: c, email: d};
+        return b.push(f).then(function(a) { 
+            $(".sucess").css("display", "block"), 
+            $(".sucess-none").css("display", "none") }), !1 })   
+}
+</script>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,50 @@
+home page
+about/testimonials
+pay it forward page
+receive it backward page
+"login" : (
+circular page
+
+
+
+home page/about
+donate
+what can it buy?
+(???)coupons/sales?
+
+<img src="https://ibb.co/WgB04MH" alt="Change for Change" style="width:500px;height:600px;">
+
+
+
+
+how much you've donated
+how much you've taken
+***
+import os
+from flask import Flask, render_template, request, redirect, url_for
+import stripe
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('charge.html')
+
+@app.route('/email')
+def email():
+	return render_template('new.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    ***
+
+    **key:
+    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
+
+    {
+"EVENT_BUCKET": "buckets",
+"DATASET": "datas",
+"TABLE": "events",
+"USERNAME": "2000rdh",
+"PASSWORD": "Hackathon123"
+}

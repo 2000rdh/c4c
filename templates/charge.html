@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Donate</title>
+    <style>
+    .topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #5B63D7;
+  color: white;
+}
+</style>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Donate</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/email">Subscribe</a>
+    </div>
+
+    <div class="jumbotron text-center">
+  <h1>Pay It Forward</h1>
+  <br>
+  <p>Help friends in your community afford their groceries by paying it forward! Donate your spare funds to someone else who might need them more.</p>
+</div>
+
+    <div class="card-deck">
+      <div class="card" style="width:200px"><br>
+        <center><img class="card-img-top" src="http://clipart-library.com/data_images/65590.png" alt="Card image" style="width:42.5%"></center>
+        <div class="card-body">
+          <h4 class="card-title">$1</h4>
+          <p class="card-text">Contribute $1 to help buy groceries for friends in the community!</p>
+  
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="customButton">Contribute</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_jvXbp9zD0MRAYhqIR2dDQVTe',
+  //image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Pay It Forward!',
+    description: 'Fill in all of the boxes below.',
+    amount: 'Donate'
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
+</form>
+        </div>
+      </div>
+      <div class="card" style="width:400px"><br>
+        <center><img class="card-img-top" src="https://us.123rf.com/450wm/larryrains/larryrains1606/larryrains160600013/57535367-stock-vector-grocery-bag.jpg?ver=6" alt="Card image" style="width:74%"></center>
+        <div class="card-body">
+          <h4 class="card-title">$5</h4>
+          <p class="card-text">Contribute $5 to help buy groceries for friends in the community!</p>
+    
+          <button id="customButton" onclick="handler.open()">Contribute</button>
+</form>
+        </div>
+      </div>
+      <div class="card" style="width:400px"><br>
+        <center><img class="card-img-top" src="http://clipart-library.com/img/1152325.jpg" alt="Card image" style="width:50%"></center>
+        <div class="card-body">
+          <h4 class="card-title">$10</h4>
+          <p class="card-text">Contribute $10 to help buy groceries for friends in the community!</p>
+          <button id="customButton" onclick="handler.open()">Contribute</button>
+</form>
+        </div>
+      </div>
+      <div class="card" style="width:400px"><br>
+        <center><img class="card-img-top" src="http://clipart-library.com/img/1949695.jpg" alt="Card image" style="width:64%"></center>
+        <div class="card-body">
+          <h4 class="card-title">$20</h4>
+          <p class="card-text">Contribute $20 to help buy groceries for friends in the community!</p>
+           
+          <button id="customButton" onclick="handler.open()">Contribute</button>
+
+</form>
+        </div>
+      </div>
+</div>
+</div>
+<br>
+<br>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
